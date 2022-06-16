@@ -34,37 +34,47 @@
     // Functions for the practice trials without the agent
     // Only jar coming onto the screen
     function jarEnteringScreen () {
-        let percentage;
-        for (let step = 0; step < 131; step++) {
-            percentage = step / 2 - 15;
-            const change_jar_on = {
-                type: 'html-keyboard-response',
-                stimulus: `
-                <img src='img/jar_covered.png'
-                style="position:absolute;
-                top:50%;
-                left:${percentage}%;
-                margin-top:-233px;
-                margin-left:-233px;"/>
+        // let percentage;
+        // for (let step = 0; step < 131; step++) {
+        //     percentage = step / 2 - 15;
+        //     const change_jar_on = {
+        //         type: 'html-keyboard-response',
+        //         stimulus: `
+        //         <img src='img/jar_covered.png'
+        //         style="position:absolute;
+        //         top:50%;
+        //         left:${percentage}%;
+        //         margin-top:-233px;
+        //         margin-left:-233px;"/>
 
-                <p style="position:absolute; top:90%; left:50%; transform: translate(-50%, -50%);">New jar</p>
-                `,
-                choices: "NO_KEYS",
-                trial_duration: 8,
-            }
-            timeline.push(change_jar_on);
-        }
+        //         <p style="position:absolute; top:90%; left:50%; transform: translate(-50%, -50%);">New jar</p>
+        //         `,
+        //         choices: "NO_KEYS",
+        //         trial_duration: 8,
+        //     }
+        //     timeline.push(change_jar_on);
+        // }
         const jar_agent_still = {
             type: 'html-keyboard-response',
             stimulus: `
             <img src='img/jar_covered.png'
             style="position:absolute;
             top:50%;
-            left:50%;
+            left:45%;
+            height: 300px;
             margin-top:-233px;
             margin-left:-233px;"/>
 
-            <p style="position:absolute; top:90%; left:50%; transform: translate(-50%, -50%);">New jar</p>
+            <img src='img/jar_covered.png'
+            style="position:absolute;
+            top:50%;
+            left:65%;
+            height: 300px;
+            margin-top:-233px;
+            margin-left:-233px;"/>
+
+            
+            <p style="position:absolute; top:90%; left:50%; transform: translate(-50%, -50%);">New jar and player</p>
             `,
             choices: "NO_KEYS",
             trial_duration: 1000,
@@ -102,11 +112,11 @@
         let percentage;
         let hand_img_path;
         for (let step = 0; step < 261; step++) {
-            if (step < 131) {
+            if (step < 100) {
                 percentage = step / 2 - 10;
                 hand_img_path = 'img/hand_back.png'
             } else {
-                percentage = 120 - step / 2;
+                percentage = 100 - step / 2;
                 hand_img_path = 'img/hand_fist_edited.png'
             }
 
@@ -126,9 +136,10 @@
                 <img src='img/jar_covered_opened.png'
                 style="position:absolute;
                 top:50%;
-                left:50%;
-                margin-top:-480px;
-                margin-left:-300px;"/>
+                left:53%;
+                height: 600px;
+                margin-top:-430px;
+                margin-left:-290px"/>
 
                 <p style="position:absolute;
                 top:90%;
@@ -137,7 +148,7 @@
 
                 `,
                 choices: "NO_KEYS",
-                trial_duration: 8,
+                trial_duration: 0.001,
             }
             timeline.push(participant_choosing_beads);
         }
@@ -160,9 +171,10 @@
                 <img src='img/jar_covered_opened.png'
                 style="position:absolute;
                 top:50%;
-                left:50%;
-                margin-top:-480px;
-                margin-left:-300px;"/>
+                left:53%;
+                height: 600px;
+                margin-top:-430px;
+                margin-left:-290px;"/>
 
                 <p style="position:absolute;
                 top:90%;
@@ -171,7 +183,7 @@
 
                 `,
                 choices: "NO_KEYS",
-                trial_duration: 8,
+                trial_duration: 0.001,
             }
             timeline.push(participant_viewing_beads);
         }
@@ -198,15 +210,16 @@
             style="position:absolute;
             z-index: -1;
             top:50%;
-            left:50%;
-            margin-top:-480px;
-            margin-left:-300px;"/>
+            left:53%;
+            height:600px;
+            margin-top:-430px;
+            margin-left:-290px;"/>
 
             </div>
 
             <div style="width:200px;
             margin-bottom: 40px;
-            margin-top: 20px;">
+            margin-top: 50px;">
             <p>Choose your confidence for the colour of the next bead:</p>
             <div style="width:50px; float: left;">
             <p><img src="img/red_bead.png"/></p>
@@ -242,33 +255,49 @@
         };
 
         let percentage;
-        for (let step = 0; step < 131; step = step + step_inc) {
-            percentage = step / 2 - 15;
-            const change_jar_on = {
-                type: 'html-keyboard-response',
-                stimulus: `
-                <img src='img/jar_covered.png'
-                style="position:absolute;
-                top:50%;
-                left:${percentage}%;
-                margin-top:-233px;
-                margin-left:-233px;"/>
+        // for (let step = 0; step < 131; step = step + step_inc) {
+        //     percentage = step / 2 - 15;
+        //     const change_jar_on = {
+        //         type: 'html-keyboard-response',
+        //         stimulus: `
+        //         <img src='img/jar_covered.png'
+        //         style="position:absolute;
+        //         top:50%;
+        //         left:${percentage}%;
+        //         margin-top:-233px;
+        //         margin-left:-233px;"/>
+                
+        //         <img src='img/jar_covered.png'
+        //         style="position:absolute;
+        //         top:50%;
+        //         left:${percentage}%;
+        //         margin-top:-233px;
+        //         margin-left:-233px;"/>
 
 
-                <p style="position:absolute; top:90%; left:50%; transform: translate(-50%, -50%);">New jar and player</p>
-                `,
-                choices: "NO_KEYS",
-                trial_duration: trialduration1,
-            }
-            timeline.push(change_jar_on);
-        }
+        //         <p style="position:absolute; top:90%; left:50%; transform: translate(-50%, -50%);">New jar and player</p>
+        //         `,
+        //         choices: "NO_KEYS",
+        //         trial_duration: trialduration1,
+        //     }
+        //     timeline.push(change_jar_on);
+        // }
         const jar_agent_still = {
             type: 'html-keyboard-response',
             stimulus: `
             <img src='img/jar_covered.png'
             style="position:absolute;
             top:50%;
-            left:50%;
+            left:45%;
+            height: 300px;
+            margin-top:-233px;
+            margin-left:-233px;"/>
+
+            <img src='img/jar_covered.png'
+            style="position:absolute;
+            top:50%;
+            left:65%;
+            height: 300px;
             margin-top:-233px;
             margin-left:-233px;"/>
 
@@ -321,11 +350,11 @@
         let percentage;
         let hand_img_path;
         for (let step = 0; step < 261; step = step + step_inc) {
-            if (step < 131) {
+            if (step < 100) {
                 percentage = step / 2 - 10;
                 hand_img_path = 'img/hand_back.png'
             } else {
-                percentage = 120 - step / 2;
+                percentage = 100 - step / 2;
                 hand_img_path = 'img/hand_fist_edited.png'
             }
 
@@ -336,20 +365,27 @@
                 <img src="${hand_img_path}"
                  style="position:absolute;
                  top:${percentage}%;
-                 left:50%;
+                 left:40%;
                  transform: translate(-50%, -50%) rotate(180deg);
-                 height:300px;
+                 height:200px;
                  width:auto;
                  "/>
 
                 <img src='img/jar_covered_opened.png'
                 style="position:absolute;
                 top:50%;
-                left:50%;
-                margin-top:-480px;
-                margin-left:-300px;"/>
+                left:45%;
+                height: 500px;
+                margin-top:-430px;
+                margin-left:-290px;"/>
 
-                
+                <img src='img/jar_covered.png'
+                style="position:absolute;
+                top:50%;
+                left:65%;
+                height: 300px;
+                margin-top:-233px;
+                margin-left:-233px;"/>
 
                 <p style="position:absolute;
                 top:90%;
@@ -364,7 +400,43 @@
         }
     }
 
-    function agent_viewing_beads(agent_img_path_1,agent_img_path_2,agent_img_path_3,agent_img_path_4, agent_decision_img_path_1,agent_decision_img_path_2,agent_decision_img_path_3,agent_decision_img_path_4, practice) {
+    function shuffleJars(){
+        for(let i = 0; i < 5; i++) {
+        for(let step = 0; step < 20; step++) {
+            percentage1 = step + 45;
+            percentage2 = 65 - step;
+            const shuffle_jars = {
+                type: 'html-keyboard-response',
+                stimulus: `
+
+                <img src="img/jar_covered.png"
+                 style="position:absolute;
+                 top:50%;
+                 left:${percentage1}%;
+                 height:300px;
+                 margin-top:-233px;
+                margin-left:-233px;
+                 "/>
+
+                 <img src="img/jar_covered.png"
+                 style="position:absolute;
+                 top:50%;
+                 left:${percentage2}%;
+                 height:300px;
+                 margin-top:-233px;
+                margin-left:-233px;
+                 "/>
+                 `,
+                 choices: "NO_KEYS",
+                 trial_duration: 1,
+                }
+        timeline.push(shuffle_jars);
+            }
+        }
+    }
+
+
+    function agent_viewing_beads(agent_img_path_1,agent_img_path_2, agent_decision_img_path_1,agent_decision_img_path_2, practice) {
         let trialduration1;
         let trialduration2;
         if (practice) {
@@ -382,46 +454,25 @@
             <img src='img/jar_covered_opened.png'
             style="position:absolute;
             top:50%;
-            left:50%;
-            margin-top:-480px;
-            margin-left:-300px;"/>
+            left:53%;
+            height: 600px;
+            margin-top:-430px;
+            margin-left:-290px;"/>
 
             <img src="${agent_img_path_1}"
              style="position:absolute;
              top:10%; 
-             left:65%;
+             left:85%;
              height:200px;
              width:auto"/>
 
              
             <img src="${agent_img_path_2}"
              style="position:absolute;
-             top:10%; 
+             top:50%; 
              left:85%;
              height:200px;
              width:auto"/>
-
-             <img src="${agent_img_path_3}"
-             style="position:absolute;
-             top:40%; 
-             left:65%;
-             height:200px;
-             width:auto"/>
-
-             <img src="${agent_img_path_4}"
-             style="position:absolute;
-             top:40%; 
-             left:85%;
-             height:200px;
-             width:auto"/>
-
-             <img src="img/hand_back.png"
-             style="position:absolute;
-             top:12%;
-             left:68%;
-             height:120px;
-             width:auto;
-             "/>
 
              <img src="img/hand_back.png"
              style="position:absolute;
@@ -433,20 +484,13 @@
 
              <img src="img/hand_back.png"
              style="position:absolute;
-             top:42%;
-             left:68%;
-             height:120px;
-             width:auto;
-             "/>
-
-             <img src="img/hand_back.png"
-             style="position:absolute;
-             top:42%;
+             top:52%;
              left:88%;
              height:120px;
              width:auto;
              "/>
 
+              
             <p style="position:absolute;
             top:90%;
             left:50%;
@@ -465,68 +509,41 @@
             <img src='img/jar_covered_opened.png'
             style="position:absolute;
             top:50%;
-            left:50%;
-            margin-top:-480px;
-            margin-left:-300px;"/>
+            left:53%;
+            height: 600px;
+            margin-top:-430px;
+            margin-left:-290px;"/>
 
 
             <img src="${agent_img_path_1}"
             style="position:absolute;
              top:10%;
-             left:65%;
+             left:85%;
              height:200px;
              width:auto;"/>
 
             <img src="${agent_img_path_2}"
             style="position:absolute;
-             top:10%;
+             top:50%;
              left:85%;
              height:200px;
              width:auto;"/>
 
-             <img src="${agent_img_path_3}"
-            style="position:absolute;
-             top:40%;
-             left:65%;
-             height:200px;
-             width:auto;"/>
-
-             <img src="${agent_img_path_4}"
-            style="position:absolute;
-             top:40%;
-             left:85%;
-             height:200px;
-             width:auto;"/>
-            
-
+             
             <img src="${agent_decision_img_path_1}"
             style="position:absolute;
              top:30%;
-             left:65%;
-             height:50px;
+             left:70%;
+             height:20px;
              width:auto;"/>
 
              <img src="${agent_decision_img_path_2}"
             style="position:absolute;
-             top:30%;
-             left:85%;
-             height:50px;
+             top:70%;
+             left:70%;
+             height:20px;
              width:auto;"/>
 
-             <img src="${agent_decision_img_path_3}"
-            style="position:absolute;
-             top:60%;
-             left:65%;
-             height:50px;
-             width:auto;"/>
-
-             <img src="${agent_decision_img_path_4}"
-            style="position:absolute;
-             top:60%;
-             left:85%;
-             height:50px;
-             width:auto;"/>
-             
 
             <p style="position:absolute;
             top:90%;
@@ -540,7 +557,7 @@
         timeline.push(agent_decided);
     }
 
-    function agentReplacingBeads (agent_img_path_1,agent_img_path_2,agent_img_path_3,agent_img_path_4, agent_decision_img_path_1,agent_decision_img_path_2,agent_decision_img_path_3,agent_decision_img_path_4, practice) {
+    function agentReplacingBeads (agent_img_path_1,agent_img_path_2, agent_decision_img_path_1,agent_decision_img_path_2, practice) {
         let trialduration1;
         let step_inc;
         if (practice) {
@@ -554,11 +571,11 @@
         let percentage;
         let hand_img_path;
         for (let step = 0; step < 261; step = step + step_inc) {
-            if (step < 131) {
+            if (step < 100) {
                 percentage = step / 2 - 10;
                 hand_img_path = 'img/hand_fist_edited.png'
             } else {
-                percentage = 120 - step / 2;
+                percentage = 100 - step / 2;
                 hand_img_path = 'img/hand_back.png'
             }
 
@@ -571,73 +588,46 @@
                  top:${percentage}%;
                  left:50%;
                  transform: translate(-50%, -50%) rotate(180deg);
-                 height:300px;
+                 height:200px;
                  width:auto;
                  "/>
 
                 <img src='img/jar_covered_opened.png'
                 style="position:absolute;
                 top:50%;
-                left:50%;
-                margin-top:-480px;
-                margin-left:-300px;"/>
+                left:53%;
+                height: 600px;
+                margin-top:-430px;
+                margin-left:-290px;"/>
 
                 
                 <img src="${agent_img_path_1}"
-            style="position:absolute;
-             top:10%;
-             left:65%;
-             height:200px;
-             width:auto;"/>
+                style="position:absolute;
+                top:10%;
+                left:85%;
+                height:200px;
+                width:auto;"/>
 
-            <img src="${agent_img_path_2}"
-            style="position:absolute;
-             top:10%;
-             left:85%;
-             height:200px;
-             width:auto;"/>
+                <img src="${agent_img_path_2}"
+                style="position:absolute;
+                top:50%;
+                left:85%;
+                height:200px;
+                width:auto;"/>
 
-             <img src="${agent_img_path_3}"
-            style="position:absolute;
-             top:40%;
-             left:65%;
-             height:200px;
-             width:auto;"/>
-
-             <img src="${agent_img_path_4}"
-            style="position:absolute;
-             top:40%;
-             left:85%;
-             height:200px;
-             width:auto;"/>
-            
 
             <img src="${agent_decision_img_path_1}"
             style="position:absolute;
              top:30%;
-             left:65%;
-             height:50px;
+             left:70%;
+             height:20px;
              width:auto;"/>
 
              <img src="${agent_decision_img_path_2}"
             style="position:absolute;
-             top:30%;
-             left:85%;
-             height:50px;
-             width:auto;"/>
-
-             <img src="${agent_decision_img_path_3}"
-            style="position:absolute;
-             top:60%;
-             left:65%;
-             height:50px;
-             width:auto;"/>
-
-             <img src="${agent_decision_img_path_4}"
-            style="position:absolute;
-             top:60%;
-             left:85%;
-             height:50px;
+             top:70%;
+             left:70%;
+             height:20px;
              width:auto;"/>
 
                 <p style="position:absolute;
@@ -653,7 +643,7 @@
         }
     }
 
-    function participantChoosingBeads (agent_img_path_1,agent_img_path_2,agent_img_path_3,agent_img_path_4, agent_decision_img_path_1,agent_decision_img_path_2,agent_decision_img_path_3,agent_decision_img_path_4, participant_beads_img_path, practice) {
+    function participantChoosingBeads (agent_img_path_1,agent_img_path_2, agent_decision_img_path_1,agent_decision_img_path_2, participant_beads_img_path, practice) {
         let trialduration1;
         let step_inc;
         if (practice) {
@@ -667,11 +657,11 @@
         let percentage;
         let hand_img_path;
         for (let step = 0; step < 261; step = step + step_inc) {
-            if (step < 131) {
+            if (step < 100) {
                 percentage = step / 2 - 10;
                 hand_img_path = 'img/hand_back.png'
             } else {
-                percentage = 120 - step / 2;
+                percentage = 100 - step / 2;
                 hand_img_path = 'img/hand_fist_edited.png'
             }
 
@@ -684,72 +674,45 @@
                  top:${percentage}%;
                  left:50%;
                  transform: translate(-50%, -50%) rotate(180deg);
-                 height:300px;
+                 height:200px;
                  width:auto;
                  "/>
 
                 <img src='img/jar_covered_opened.png'
                 style="position:absolute;
                 top:50%;
-                left:50%;
-                margin-top:-480px;
-                margin-left:-300px;"/>
+                left:53%;
+                height: 600px;
+                margin-top:-430px;
+                margin-left:-290px;"/>
 
                 <img src="${agent_img_path_1}"
             style="position:absolute;
              top:10%;
-             left:65%;
+             left:85%;
              height:200px;
              width:auto;"/>
 
             <img src="${agent_img_path_2}"
             style="position:absolute;
-             top:10%;
+             top:50%;
              left:85%;
              height:200px;
              width:auto;"/>
 
-             <img src="${agent_img_path_3}"
-            style="position:absolute;
-             top:40%;
-             left:65%;
-             height:200px;
-             width:auto;"/>
-
-             <img src="${agent_img_path_4}"
-            style="position:absolute;
-             top:40%;
-             left:85%;
-             height:200px;
-             width:auto;"/>
-            
-
+    
             <img src="${agent_decision_img_path_1}"
             style="position:absolute;
              top:30%;
-             left:65%;
-             height:50px;
+             left:70%;
+             height:20px;
              width:auto;"/>
 
              <img src="${agent_decision_img_path_2}"
             style="position:absolute;
-             top:30%;
-             left:85%;
-             height:50px;
-             width:auto;"/>
-
-             <img src="${agent_decision_img_path_3}"
-            style="position:absolute;
-             top:60%;
-             left:65%;
-             height:50px;
-             width:auto;"/>
-
-             <img src="${agent_decision_img_path_4}"
-            style="position:absolute;
-             top:60%;
-             left:85%;
-             height:50px;
+             top:70%;
+             left:70%;
+             height:20px;
              width:auto;"/>
 
                 <p style="position:absolute;
@@ -764,8 +727,8 @@
             timeline.push(participant_choosing_beads);
         }
 
-        for (let step = 0; step < 131; step = step + step_inc) {
-            percentage = 120 - step/2;
+        for (let step = 0; step < 100; step = step + step_inc) {
+            percentage = 100 - step/2;
             const participant_viewing_beads = {
                 type: 'html-keyboard-response',
                 stimulus: `
@@ -775,74 +738,49 @@
                  top:${percentage}%;
                  left:25%;
                  transform: translate(-50%, -50%);
-                 height:400px;
+                 height:300px;
                  width:auto;
                  "/>
 
                 <img src='img/jar_covered_opened.png'
                 style="position:absolute;
                 top:50%;
-                left:50%;
-                margin-top:-480px;
-                margin-left:-300px;"/>
+                left:53%;
+                height: 600px;
+                margin-top:-430px;
+                margin-left:-290px;"/>
 
                 <img src="${agent_img_path_1}"
             style="position:absolute;
              top:10%;
-             left:65%;
+             left:85%;
              height:200px;
              width:auto;"/>
 
             <img src="${agent_img_path_2}"
             style="position:absolute;
-             top:10%;
+             top:50%;
              left:85%;
              height:200px;
              width:auto;"/>
 
-             <img src="${agent_img_path_3}"
-            style="position:absolute;
-             top:40%;
-             left:65%;
-             height:200px;
-             width:auto;"/>
-
-             <img src="${agent_img_path_4}"
-            style="position:absolute;
-             top:40%;
-             left:85%;
-             height:200px;
-             width:auto;"/>
             
 
             <img src="${agent_decision_img_path_1}"
             style="position:absolute;
              top:30%;
-             left:65%;
-             height:50px;
+             left:70%;
+             height:20px;
              width:auto;"/>
 
              <img src="${agent_decision_img_path_2}"
             style="position:absolute;
-             top:30%;
-             left:85%;
-             height:50px;
+             top:70%;
+             left:70%;
+             height:20px;
              width:auto;"/>
 
-             <img src="${agent_decision_img_path_3}"
-            style="position:absolute;
-             top:60%;
-             left:65%;
-             height:50px;
-             width:auto;"/>
-
-             <img src="${agent_decision_img_path_4}"
-            style="position:absolute;
-             top:60%;
-             left:85%;
-             height:50px;
-             width:auto;"/>
-
+            
                 <p style="position:absolute;
                 top:90%;
                 left:50%;
@@ -857,7 +795,7 @@
 
     }
 
-    function participantStateConfidence (agent_img_path_1,agent_img_path_2,agent_img_path_3,agent_img_path_4, agent_decision_img_path_1,agent_decision_img_path_2,agent_decision_img_path_3,agent_decision_img_path_4, participant_beads_img_path) {
+    function participantStateConfidence (agent_img_path_1,agent_img_path_2, agent_decision_img_path_1,agent_decision_img_path_2, participant_beads_img_path) {
         const participant_stating_confidence = {
             type: 'html-slider-response',
             stimulus: `
@@ -869,7 +807,7 @@
              top:55%;
              left:25%;
              transform: translate(-50%, -50%);
-             height:400px;
+             height:300px;
              width:auto;
              "/>
 
@@ -877,73 +815,46 @@
             style="position:absolute;
             z-index: -1;
             top:50%;
-            left:50%;
-            margin-top:-480px;
-            margin-left:-300px;"/>
+            left:53%;
+            height: 600px;
+            margin-top:-430px;
+            margin-left:-290px"/>
 
             <img src="${agent_img_path_1}"
             style="position:absolute;
              top:10%;
-             left:65%;
+             left:85%;
              height:200px;
              width:auto;"/>
 
             <img src="${agent_img_path_2}"
             style="position:absolute;
-             top:10%;
+             top:50%;
              left:85%;
              height:200px;
              width:auto;"/>
 
-             <img src="${agent_img_path_3}"
-            style="position:absolute;
-             top:40%;
-             left:65%;
-             height:200px;
-             width:auto;"/>
-
-             <img src="${agent_img_path_4}"
-            style="position:absolute;
-             top:40%;
-             left:85%;
-             height:200px;
-             width:auto;"/>
-            
-
+    
             <img src="${agent_decision_img_path_1}"
             style="position:absolute;
              top:30%;
-             left:65%;
-             height:50px;
+             left:70%;
+             height:20px;
              width:auto;"/>
 
              <img src="${agent_decision_img_path_2}"
             style="position:absolute;
-             top:30%;
-             left:85%;
-             height:50px;
-             width:auto;"/>
-
-             <img src="${agent_decision_img_path_3}"
-            style="position:absolute;
-             top:60%;
-             left:65%;
-             height:50px;
-             width:auto;"/>
-
-             <img src="${agent_decision_img_path_4}"
-            style="position:absolute;
-             top:60%;
-             left:85%;
-             height:50px;
+             top:70%;
+             left:70%;
+             height:20px;
              width:auto;"/>
 
             </div>
 
             <div style="width:200px;
             margin-bottom: 40px;
-            margin-top: 20px;">
-            <p>Choose your confidence for the colour of the next bead:</p>
+            margin-top: 50px;">
+            <p style="top:40%;right:0%; position:relative;">Choose your confidence for the jar which the beads are drawn from:</p>
             <div style="width:50px; float: left;">
             <p><img src="img/red_bead.png"/></p>
             </div>
@@ -954,7 +865,7 @@
 
             `,
             slider_width: 100,
-            data: {participant_response: true, agent_decision_1: agent_decision_img_path_1, agent_decision_2: agent_decision_img_path_2, agent_decision_3: agent_decision_img_path_3, agent_decision_4: agent_decision_img_path_4, beads_shown: participant_beads_img_path},
+            data: {participant_response: true, agent_decision_1: agent_decision_img_path_1, agent_decision_2: agent_decision_img_path_2, beads_shown: participant_beads_img_path},
         }
         timeline.push(participant_stating_confidence);
     }
@@ -975,7 +886,7 @@
     let timeline = [];
 
     // Function to remove data that is not necessary
-    // jsPsych.data.ignore(['trial_type', 'trial_index', 'time_elapsed', 'internal_node_id', 'stimulus', 'key_press', 'success']);
+    jsPsych.data.ignore(['trial_type', 'trial_index', 'time_elapsed', 'internal_node_id', 'stimulus', 'key_press', 'success']);
 
     /* init connection with pavlovia.org */
     const pavlovia_init = {
@@ -1005,12 +916,13 @@
 
         <p>Please read them carefully.</p>
 
-        <p>There are 9 jars, each of which contains a different number of red and green beads.
+        <p>There are 2 jars, each of which contains a different number of red and green beads.
          They look something like this:</p>
 
-        <p><img src="img/all_jars.png" style="height:800px; width:auto"</p>
-
-        <p>The numbers below each of the jars indicate the ratios of red:green beads in each.</p>
+        <img src="img/jar_40_60.png" alt = "6-4" style="width:10%" float:"left">
+        <img src="img/jar_60_40.png" alt="4-6" style="width:10%" float:"right">
+        
+        <p> The ratio of red:green in the left jar is 60 to 40 and this ratio for the right jar is 40 to 60. </p>
 
         <p>You will be given one of these jars at random. But, you won't know which jar it is you have been given, as it will be
         presented to you covered, so you can't see the contents of the jar. This would look something like this:</p>
@@ -1021,9 +933,8 @@
 
         <p><img src ="img/bead_samples/3red.png"</p>
 
-        <p>Based on these beads, your task is to guess, if you were to take another bead from the jar, what color it
-        could be. But you only need to state a confidence, using a confidence bar. For instance, if you were strongly
-        confident that the next color could be red, you might choose to place your guess on the confidence scale like
+        <p>Based on these beads, your task is to guess, which jar these beads are drawn from. But you only need to state a confidence, using a confidence bar. The red circle indicates the jar with majority of red beads and the green circle is indication of the jar with majority of green beads. For instance, if you were strongly
+        confident that the samples are drawn from the jar with majority of red beads, you might choose to place your guess on the confidence scale like
         so (note that the style of the slider you will see in the experiment might look different to that shown here,
         but that should not make a difference):</p>
 
@@ -1034,7 +945,7 @@
 
         <p><img src="img/agent_choices/50.png"</p>
 
-        <p>After you have taken a guess, the jar will be swapped for a new, random jar, after which you will repeat
+        <p>After you have taken a guess, the jars will be randomly shuffled, after which you will repeat
         the task.</p>
 
         <p>Let's do some practice trials, 5 in total. If you're ready to start, and feel that you understand the
@@ -1044,7 +955,7 @@
 
         `
     }
-    // timeline.push(instructions);
+    timeline.push(instructions);
 
 
     const enter_fullscreen = {
@@ -1058,20 +969,21 @@
 
     let bead_samples_path;
     const bead_samples_practice1 = [1, 3, 5, 2, 7];
-    // for (let trial = 0; trial < 5; trial++) {
-    //     bead_samples_path = 'img/bead_samples/' + bead_samples_practice1[trial] + 'red.png';
-    //     jarEnteringScreen();
-    //     participantChoosingBeadsWithoutAgent(bead_samples_path);
-    //     participantStateConfidenceWithoutAgent(bead_samples_path);
-    //     fixation();
-    // }
+    for (let trial = 0; trial < 3; trial++) {
+        bead_samples_path = 'img/bead_samples/' + bead_samples_practice1[trial] + 'red.png';
+        jarEnteringScreen();
+        shuffleJars();
+        participantChoosingBeadsWithoutAgent(bead_samples_path);
+        participantStateConfidenceWithoutAgent(bead_samples_path);
+        fixation();
+    }
 
     const exit_fullscreen = {
     type: 'fullscreen',
     message: '<p>Practice trials completed.</p>',
     fullscreen_mode: false
     }
-    // timeline.push(exit_fullscreen);
+    timeline.push(exit_fullscreen);
 
     const instructions2 = {
         type: 'html-keyboard-response',
@@ -1080,84 +992,49 @@
 
         <p>Practice trials are over. Hopefully the task was simple enough to grasp. We're now going to add an
         additional element to the task. You will perform the guesswork just like before, but you will do so alongside other players.
-        There are 20 players in total, and a new player will be swapped in for each trial. They will take their turn
+        There are 20 players in total, and two new players will be swapped in for each trial. They will take their turn
         first, picking out 8 beads, making a guess, then replacing the beads back into the jar. You'll be able to see the guess they make, but you won't be
         able to see their beads. This should help you in making your own decision, as their guess provides some extra
          information on which jar might be in front of you both.</p>
 
-        <p>We'll run another 5 practice trials, this time with the additional players. If you're ready to start, go
+        <p>We'll run another 3 practice trials, this time with the additional players. If you're ready to start, go
          ahead and press the 'space' key.</p>
 
         <p> &lt; Press 'space' to continue &gt; </p>
 
         `
     }
-    // timeline.push(instructions2);
+    timeline.push(instructions2);
 
-    // timeline.push(enter_fullscreen);
+    timeline.push(enter_fullscreen);
 
     let agent_img_path;
     let agent_choice_path;
     let agent_choice_confidence;
-    const agent_choices_practice2 = [10, 15, 20, 5, 50, 30, 40, 60, 30, 20, 40, 10, 95, 80, 90,85, 50, 40, 60, 65];
+    const agent_choices_practice_1 = [15, 50, 30, 20, 90, 50];
+    const agent_choices_practice_2 = [20, 40, 50, 15, 70, 60];
     const bead_samples_practice2 = [7, 3, 4, 6, 1];
-    for (let trial = 0; trial < 5; trial++) {
+    for (let trial = 0; trial < 3; trial++) {
         agent_img_path_1 = `img/faces/${trial + 1}.png`;
         agent_img_path_2 = `img/faces/${trial + 2}.png`;
-        agent_img_path_3 = `img/faces/${trial + 3}.png`;
-        agent_img_path_4 = `img/faces/${trial + 4}.png`;
 
-
-        if (agent_choices_practice2[trial*4] < 40){
-            agent_choice_path_1 = 'img/confident_red.png';    
-        } else if (agent_choices_practice2[trial*4] <= 50){
-            agent_choice_path_1 = 'img/unconfident_red.png';    
-        } else if (agent_choices_practice2[trial*4] < 60){
-            agent_choice_path_1 = 'img/unconfident_green.png';    
-        } else {
-            agent_choice_path_1 = 'img/confident_green.png';
-        }
-        if (agent_choices_practice2[trial*4+1] < 40){
-            agent_choice_path_2 = 'img/confident_red.png';    
-        } else if (agent_choices_practice2[trial*4+1] <= 50){
-            agent_choice_path_2 = 'img/unconfident_red.png';    
-        } else if (agent_choices_practice2[trial*4+1] < 60){
-            agent_choice_path_2 = 'img/unconfident_green.png';    
-        } else {
-            agent_choice_path_2 = 'img/confident_green.png';
-        }
-        if (agent_choices_practice2[trial*4+2] < 40){
-            agent_choice_path_3 = 'img/confident_red.png';    
-        } else if (agent_choices_practice2[trial*4+2] <= 50){
-            agent_choice_path_3 = 'img/unconfident_red.png';    
-        } else if (agent_choices_practice2[trial*4+2] < 60){
-            agent_choice_path_3 = 'img/unconfident_green.png';    
-        } else {
-            agent_choice_path_3 = 'img/confident_green.png';
-        }
-        if (agent_choices_practice2[trial*4+3] < 40){
-            agent_choice_path_4 = 'img/confident_red.png';    
-        } else if (agent_choices_practice2[trial*4+3] <= 50){
-            agent_choice_path_4 = 'img/unconfident_red.png';    
-        } else if (agent_choices_practice2[trial*4+3] < 60){
-            agent_choice_path_4 = 'img/unconfident_green.png';    
-        } else {
-            agent_choice_path_4 = 'img/confident_green.png';
-        }
-
-        // agent_choice_path = 'img/agent_choices/' + agent_choices_practice2[trial] + '.png';
+        
+        agent_choice_path_1 = 'img/agent_choices/' + agent_choices_practice_1[trial] + '.png';
+        agent_choice_path_2 = 'img/agent_choices/' + agent_choices_practice_2[trial] + '.png';
+        
         bead_samples_path = 'img/bead_samples/' + bead_samples_practice2[trial] + 'red.png';
 
         jarAgentEnteringScreen(agent_img_path, true);
+        shuffleJars();
         agentChoosingBeads(agent_img_path, true);
-        agent_viewing_beads(agent_img_path_1,agent_img_path_2,agent_img_path_3,agent_img_path_4, agent_choice_path_1,agent_choice_path_2,agent_choice_path_3,agent_choice_path_4, true);
-        agentReplacingBeads(agent_img_path_1,agent_img_path_2,agent_img_path_3,agent_img_path_4, agent_choice_path_1,agent_choice_path_2,agent_choice_path_3,agent_choice_path_4, true);
-        participantChoosingBeads(agent_img_path_1,agent_img_path_2,agent_img_path_3,agent_img_path_4, agent_choice_path_1,agent_choice_path_2,agent_choice_path_3,agent_choice_path_4, bead_samples_path, true);
-        participantStateConfidence(agent_img_path_1,agent_img_path_2,agent_img_path_3,agent_img_path_4, agent_choice_path_1,agent_choice_path_2,agent_choice_path_3,agent_choice_path_4, bead_samples_path, true);
+        agent_viewing_beads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, true);
+        agentReplacingBeads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, true);
+        participantChoosingBeads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, bead_samples_path, true);
+        participantStateConfidence(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, bead_samples_path, true);
         fixation();
     }
 
-    // timeline.push(exit_fullscreen);
+    timeline.push(exit_fullscreen);
 
     const instructions3 = {
         type: 'html-keyboard-response',
@@ -1178,19 +1055,25 @@
     // Running the real trials
     // I was going to read the choices and beads directly from the text files. But I'm too lazy, and it seems a little
     // complicated. So for now, I'll just copy and paste them here.
-    const agent_choices_trials = [10, 45, 75, 25, 60, 45, 20, 40, 70, 90, 5, 50, 5, 80, 55, 10, 10, 90, 25, 85, 55, 70, 90, 65, 5, 80, 5, 35, 45, 5, 5, 65, 35, 50, 5, 40, 55, 60, 55, 45, 65, 75, 70, 15, 55, 95, 5, 10, 5, 60, 75, 5, 5, 70, 5, 5, 85, 85, 5, 30, 25, 5, 25, 40, 80, 35, 95, 10, 95, 5, 60, 35, 10, 75, 45, 75, 95, 5, 5, 5, 60, 20, 60, 75, 95, 80, 20, 40, 65, 5, 40, 70, 50, 25, 5, 60, 30, 95, 80, 20, 5, 20, 25, 80, 65, 35, 55, 80, 30, 60, 55, 90, 15, 35, 30];
-    const bead_samples_trials = [3, 5, 3, 6, 3, 4, 4, 1, 1, 2, 7, 6, 7, 3, 2, 6, 7, 3, 5, 2, 5, 3, 1, 3, 7, 1, 5, 6, 5, 5, 7, 2, 4, 4, 4, 1, 3, 3, 2, 5, 2, 3, 2, 5, 4, 2, 7, 6, 5, 2, 2, 6, 5, 3, 7, 7, 1, 1, 7, 4, 4, 7, 5, 7, 1, 4, 2, 5, 1, 7, 3, 5, 6, 2, 4, 1, 1, 6, 6, 7, 1, 5, 2, 2, 1, 2, 6, 3, 2, 7, 4, 2, 3, 6, 7, 3, 7, 1, 1, 4, 6, 4, 6, 1, 3, 5, 6, 4, 6, 3, 4, 1, 5, 6, 4];
+    const agent_choices_trials_1 = [75, 65, 20, 60, 40, 20, 20, 60, 30, 5, 40, 20, 35, 85, 5, 35, 20, 55, 15, 5, 65, 70, 55, 50, 35, 5, 45, 95, 50, 75, 70, 5, 5, 55, 90, 45, 5, 25, 75, 50, 65, 55, 60, 25, 40, 5, 65, 65, 70, 95, 85, 10, 30, 25, 25, 5, 5, 50, 25, 35, 65, 75, 5, 5, 80, 50, 30, 65, 30, 5, 60, 55, 70, 20, 40, 5, 75, 80, 5, 80, 50, 20, 5, 95, 85, 50, 20, 40, 95, 70, 40, 55, 75, 90, 95, 80, 5, 90, 30, 5, 5, 5, 85, 50, 80, 90, 20, 5, 5, 30, 20, 35, 10, 15, 75];
+
+    const agent_choices_trials_2 = [50, 40, 15, 70, 65, 15, 35, 65, 45, 5, 95, 5, 75, 80, 20, 10, 5, 35, 30, 30, 80, 65, 35, 10, 45, 15, 70, 70, 65, 15, 95, 5, 5, 65, 75, 50, 5, 70, 70, 60, 80, 50, 40, 5, 55, 5, 50, 55, 80, 70, 95, 5, 15, 5, 5, 5, 45, 85, 80, 15, 50, 80, 5, 5, 95, 45, 25, 95, 45, 5, 80, 95, 55, 40, 95, 5, 30, 75, 5, 80, 25, 55, 30, 60, 60, 60, 45, 40, 95, 95, 60, 35, 80, 85, 60, 80, 30, 95, 40, 15, 5, 15, 80, 25, 75, 75, 5, 5, 10, 30, 35, 5, 5, 40, 50];
+
+    const bead_samples_trials = [3, 4, 5, 1, 1, 5, 5, 3, 4, 6, 1, 5, 4, 2, 6, 5, 7, 3, 7, 7, 1, 2, 4, 3, 3, 7, 3, 2, 5, 4, 1, 7, 7, 3, 1, 4, 7, 2, 1, 3, 2, 4, 6, 5, 5, 6, 3, 3, 2, 2, 1, 7, 7, 6, 6, 7, 6, 2, 3, 6, 4, 2, 6, 6, 1, 5, 5, 1, 5, 7, 3, 3, 3, 4, 3, 6, 4, 1, 6, 2, 4, 4, 6, 1, 2, 3, 4, 4, 1, 2, 2, 5, 2, 1, 2, 4, 6, 1, 5, 6, 7, 6, 1, 3, 1, 2, 5, 7, 7, 5, 5, 7, 7, 4, 2];
     for (let trial = 0; trial < 115; trial++) {
-        agent_img_path = `img/faces/${trial % 20 + 1}.png`;
-        agent_choice_path = 'img/agent_choices/' + agent_choices_trials[trial] + '.png';
+        agent_img_path_1 = `img/faces/${trial % 20 + 1}.png`;
+        agent_img_path_2 = `img/faces/${trial % 20 + 2}.png`;
+        agent_choice_path_1 = 'img/agent_choices/' + agent_choices_trials_1[trial] + '.png';
+        agent_choice_path_2 = 'img/agent_choices/' + agent_choices_trials_2[trial] + '.png';
         bead_samples_path = 'img/bead_samples/' + bead_samples_trials[trial] + 'red.png';
 
         jarAgentEnteringScreen(agent_img_path, false);
+        shuffleJars();
         agentChoosingBeads(agent_img_path, false);
-        agent_viewing_beads(agent_img_path, agent_choice_path, false);
-        agentReplacingBeads(agent_img_path, agent_choice_path, false);
-        participantChoosingBeads(agent_img_path, agent_choice_path, bead_samples_path, false);
-        participantStateConfidence(agent_img_path, agent_choice_path, bead_samples_path, false);
+        agent_viewing_beads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, false);
+        agentReplacingBeads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, false);
+        participantChoosingBeads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, bead_samples_path, false);
+        participantStateConfidence(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, bead_samples_path, false);
         fixation();
     }
 
