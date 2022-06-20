@@ -77,7 +77,7 @@
             <p style="position:absolute; top:90%; left:50%; transform: translate(-50%, -50%);">New jar and player</p>
             `,
             choices: "NO_KEYS",
-            trial_duration: 1000,
+            trial_duration: 800,
         }
         timeline.push(jar_agent_still);
     }
@@ -148,7 +148,7 @@
 
                 `,
                 choices: "NO_KEYS",
-                trial_duration: 0.001,
+                trial_duration: 2,
             }
             timeline.push(participant_choosing_beads);
         }
@@ -183,7 +183,7 @@
 
                 `,
                 choices: "NO_KEYS",
-                trial_duration: 0.001,
+                trial_duration: 2,
             }
             timeline.push(participant_viewing_beads);
         }
@@ -221,16 +221,16 @@
             margin-bottom: 40px;
             margin-top: 50px;">
             <p>Choose your confidence for the colour of the next bead:</p>
-            <div style="width:50px; float: left;">
+            <div style="width:10px; float: left;">
             <p><img src="img/red_bead.png"/></p>
             </div>
-            <div style="width:50px; float: right;">
+            <div style="width:25px; float: right;">
             <p><img src="img/green_bead.png"/></p>
             </div>
             </div>
 
             `,
-            slider_width: 100,
+            slider_width: 150,
         }
         timeline.push(participant_stating_confidence);
     }
@@ -340,10 +340,10 @@
         let trialduration1;
         let step_inc;
         if (practice) {
-            trialduration1 = 8;
+            trialduration1 = 6;
             step_inc = 2;
         } else {
-            trialduration1 = 1;
+            trialduration1 = 0.5;
             step_inc = 4;
         };
 
@@ -353,9 +353,11 @@
             if (step < 100) {
                 percentage = step / 2 - 10;
                 hand_img_path = 'img/hand_back.png'
+                hand_img_path_flipped = 'img/hand_flipped.png'
             } else {
                 percentage = 100 - step / 2;
                 hand_img_path = 'img/hand_fist_edited.png'
+                hand_img_path_flipped = 'img/fist_flipped.png'
             }
 
             const agent_choosing_beads = {
@@ -365,7 +367,15 @@
                 <img src="${hand_img_path}"
                  style="position:absolute;
                  top:${percentage}%;
-                 left:40%;
+                 left:36%;
+                 transform: translate(-50%, -50%) rotate(180deg);
+                 height:200px;
+                 width:auto;
+                 "/>
+                 <img src="${hand_img_path_flipped}"
+                 style="position:absolute;
+                 top:${percentage}%;
+                 left:44%;
                  transform: translate(-50%, -50%) rotate(180deg);
                  height:200px;
                  width:auto;
@@ -401,7 +411,7 @@
     }
 
     function shuffleJars(){
-        for(let i = 0; i < 5; i++) {
+        for(let i = 0; i < 3; i++) {
         for(let step = 0; step < 20; step++) {
             percentage1 = step + 45;
             percentage2 = 65 - step;
@@ -440,11 +450,11 @@
         let trialduration1;
         let trialduration2;
         if (practice) {
-            trialduration1 = 1500;
-            trialduration2 = 1000;
+            trialduration1 = 800;
+            trialduration2 = 1200;
         } else {
-            trialduration1 = 200;
-            trialduration2 = 1000;
+            trialduration1 = 100;
+            trialduration2 = 800;
         };
 
         const agent_viewing_beads = {
@@ -482,7 +492,7 @@
              width:auto;
              "/>
 
-             <img src="img/hand_back.png"
+             <img src="img/hand_flipped.png"
              style="position:absolute;
              top:52%;
              left:88%;
@@ -534,14 +544,14 @@
             style="position:absolute;
              top:30%;
              left:70%;
-             height:20px;
+             height:30px;
              width:auto;"/>
 
              <img src="${agent_decision_img_path_2}"
             style="position:absolute;
              top:70%;
              left:70%;
-             height:20px;
+             height:30px;
              width:auto;"/>
 
 
@@ -564,7 +574,7 @@
             trialduration1 = 8;
             step_inc = 2;
         } else {
-            trialduration1 = 1;
+            trialduration1 = 0.5;
             step_inc = 4;
         };
 
@@ -574,10 +584,13 @@
             if (step < 100) {
                 percentage = step / 2 - 10;
                 hand_img_path = 'img/hand_fist_edited.png'
+                hand_img_path_flipped = 'img/fist_flipped.png'
             } else {
                 percentage = 100 - step / 2;
                 hand_img_path = 'img/hand_back.png'
+                hand_img_path_flipped = 'img/hand_flipped.png'
             }
+            
 
             const agent_replacing_beads = {
                 type: 'html-keyboard-response',
@@ -586,7 +599,16 @@
                 <img src="${hand_img_path}"
                  style="position:absolute;
                  top:${percentage}%;
-                 left:50%;
+                 left:46%;
+                 transform: translate(-50%, -50%) rotate(180deg);
+                 height:200px;
+                 width:auto;
+                 "/>
+
+                 <img src="${hand_img_path_flipped}"
+                 style="position:absolute;
+                 top:${percentage}%;
+                 left:54%;
                  transform: translate(-50%, -50%) rotate(180deg);
                  height:200px;
                  width:auto;
@@ -620,14 +642,14 @@
             style="position:absolute;
              top:30%;
              left:70%;
-             height:20px;
+             height:30px;
              width:auto;"/>
 
              <img src="${agent_decision_img_path_2}"
             style="position:absolute;
              top:70%;
              left:70%;
-             height:20px;
+             height:30px;
              width:auto;"/>
 
                 <p style="position:absolute;
@@ -647,10 +669,10 @@
         let trialduration1;
         let step_inc;
         if (practice) {
-            trialduration1 = 8;
+            trialduration1 = 4;
             step_inc = 2;
         } else {
-            trialduration1 = 1;
+            trialduration1 = 0.5;
             step_inc = 4;
         };
 
@@ -701,20 +723,6 @@
              width:auto;"/>
 
     
-            <img src="${agent_decision_img_path_1}"
-            style="position:absolute;
-             top:30%;
-             left:70%;
-             height:20px;
-             width:auto;"/>
-
-             <img src="${agent_decision_img_path_2}"
-            style="position:absolute;
-             top:70%;
-             left:70%;
-             height:20px;
-             width:auto;"/>
-
                 <p style="position:absolute;
                 top:90%;
                 left:50%;
@@ -762,22 +770,6 @@
              top:50%;
              left:85%;
              height:200px;
-             width:auto;"/>
-
-            
-
-            <img src="${agent_decision_img_path_1}"
-            style="position:absolute;
-             top:30%;
-             left:70%;
-             height:20px;
-             width:auto;"/>
-
-             <img src="${agent_decision_img_path_2}"
-            style="position:absolute;
-             top:70%;
-             left:70%;
-             height:20px;
              width:auto;"/>
 
             
@@ -835,36 +827,22 @@
              width:auto;"/>
 
     
-            <img src="${agent_decision_img_path_1}"
-            style="position:absolute;
-             top:30%;
-             left:70%;
-             height:20px;
-             width:auto;"/>
-
-             <img src="${agent_decision_img_path_2}"
-            style="position:absolute;
-             top:70%;
-             left:70%;
-             height:20px;
-             width:auto;"/>
-
             </div>
 
             <div style="width:200px;
             margin-bottom: 40px;
             margin-top: 50px;">
             <p style="top:40%;right:0%; position:relative;">Choose your confidence for the jar which the beads are drawn from:</p>
-            <div style="width:50px; float: left;">
+            <div style="width:10px; float: left;">
             <p><img src="img/red_bead.png"/></p>
             </div>
-            <div style="width:50px; float: right;">
+            <div style="width: 25px; float: right;">
             <p><img src="img/green_bead.png"/></p>
             </div>
             </div>
 
             `,
-            slider_width: 100,
+            slider_width: 150,
             data: {participant_response: true, agent_decision_1: agent_decision_img_path_1, agent_decision_2: agent_decision_img_path_2, beads_shown: participant_beads_img_path},
         }
         timeline.push(participant_stating_confidence);
@@ -927,7 +905,7 @@
         <p>You will be given one of these jars at random. But, you won't know which jar it is you have been given, as it will be
         presented to you covered, so you can't see the contents of the jar. This would look something like this:</p>
 
-        <p><img src="img/jar_covered.png"</p>
+        <p><img src="img/jar_covered.png" style="width:20%"</p>
 
         <p>You will then draw 8 random beads from the jar. You might draw something that looks like this:</p>
 
@@ -963,9 +941,9 @@
     message: '<p>The experiment will switch to full screen mode when you press the button below. You can exit any time by hitting the Esc key.</p>',
     fullscreen_mode: true
     }
-    // timeline.push(enter_fullscreen);
+    timeline.push(enter_fullscreen);
 
-    // Practice trials, 5 in total, done without an agent
+    // Practice trials, 3 in total, done without an agent
 
     let bead_samples_path;
     const bead_samples_practice1 = [1, 3, 5, 2, 7];
@@ -975,7 +953,7 @@
         shuffleJars();
         participantChoosingBeadsWithoutAgent(bead_samples_path);
         participantStateConfidenceWithoutAgent(bead_samples_path);
-        fixation();
+        // fixation();
     }
 
     const exit_fullscreen = {
@@ -983,7 +961,7 @@
     message: '<p>Practice trials completed.</p>',
     fullscreen_mode: false
     }
-    timeline.push(exit_fullscreen);
+    // timeline.push(exit_fullscreen);
 
     const instructions2 = {
         type: 'html-keyboard-response',
@@ -1006,7 +984,7 @@
     }
     timeline.push(instructions2);
 
-    timeline.push(enter_fullscreen);
+    // timeline.push(enter_fullscreen);
 
     let agent_img_path;
     let agent_choice_path;
@@ -1031,10 +1009,10 @@
         agentReplacingBeads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, true);
         participantChoosingBeads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, bead_samples_path, true);
         participantStateConfidence(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, bead_samples_path, true);
-        fixation();
+        // // fixation();
     }
 
-    timeline.push(exit_fullscreen);
+    // timeline.push(exit_fullscreen);
 
     const instructions3 = {
         type: 'html-keyboard-response',
@@ -1074,7 +1052,7 @@
         agentReplacingBeads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, false);
         participantChoosingBeads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, bead_samples_path, false);
         participantStateConfidence(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, bead_samples_path, false);
-        fixation();
+        // fixation();
     }
 
     timeline.push(exit_fullscreen);
