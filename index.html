@@ -1078,19 +1078,20 @@
         };
     timeline.push(pavlovia_finish);
 
-    /* start the experiment */
-    jsPsych.init({
-      timeline: timeline,
-      on_finish: function(){
-        window.location = "https://edinburghinformatics.eu.qualtrics.com/jfe/form/SV_cXQK6PBdZvPaiO2"
-      }
-    });
-
     // Getting participant info
     const subject_id = jsPsych.data.getURLVariable('participant');
     jsPsych.data.addProperties({
         subject_id: subject_id,
       });
+
+    /* start the experiment */
+    jsPsych.init({
+      timeline: timeline,
+      on_finish: function(){
+        window.location = "https://edinburghinformatics.eu.qualtrics.com/jfe/form/SV_cXQK6PBdZvPaiO2" + "?id=" + subject_id
+      }
+    });
+
 
 
 </script>
