@@ -1078,12 +1078,6 @@
         };
     timeline.push(pavlovia_finish);
 
-    // Getting participant info
-    const subject_id = jsPsych.data.getURLVariable('participant');
-    jsPsych.data.addProperties({
-        subject_id: subject_id,
-      });
-
     /* start the experiment */
     jsPsych.init({
       timeline: timeline,
@@ -1092,6 +1086,11 @@
       }
     });
 
+    // Getting participant info
+    const subject_id = jsPsych.data.getURLVariable('participant');
+    jsPsych.data.addProperties({
+        subject_id: subject_id,
+      });
 
 
 </script>
