@@ -1089,11 +1089,10 @@
 
     /* start the experiment */
     jsPsych.init({
-      timeline: timeline,
-      on_finish: function(){
-        window.location = "https://edinburghinformatics.eu.qualtrics.com/jfe/form/SV_cXQK6PBdZvPaiO2" + "?id=" + encodeURIComponent(subject_id) }
-    });
-
+      timeline: timeline}
+    );
+    // function(){
+    //     window.location = "https://edinburghinformatics.eu.qualtrics.com/jfe/form/SV_cXQK6PBdZvPaiO2" + "?id=" + encodeURIComponent(subject_id)}
 
 
 </script>
