@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+    <script type="text/javascript" src="jspsych-6.1.0/jspsych.js"></script>
+    <link rel="stylesheet" type="text/css" href="jspsych-6.1.0/css/jspsych.css"/>
+    <script type="text/javascript" src="jspsych-6.1.0/plugins/jspsych-html-slider-response.js"></script>
+</head>
+<body>
+    <script>
+        let timeline = [];
+        const participant_stating_confidence = {
+            type: 'html-slider-response',
+            stimulus: `
+
+            <div style="z-index: -1">
+
+            </div>
+
+            <div style="width:230px;
+            margin-bottom: 100px;
+            margin-top: 30px;">
+            <div style="width:18px; float: left;">
+            <p><img src="img/red_jar-removebg-preview.png" style="width:35px; top:47%; position:absolute;"/></p>
+            </div>
+            <div style="width:80px; float: right;">
+            <p><img src="img/green_jar-removebg-preview.png" style="width:35px;; top:47%; position:absolute;"/></p>
+            </div>
+            </div>
+
+            `,
+            slider_width: 150,
+            slider_start: 0,
+        }
+        timeline.push(participant_stating_confidence);
+        jsPsych.init({
+      timeline: timeline
+    });
+    </script>
+</body>
