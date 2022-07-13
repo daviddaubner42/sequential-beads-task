@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="jspsych-6.1.0/css/jspsych.css"/>
     <script type="text/javascript" src="jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
     <script type="text/javascript" src="jspsych-6.1.0/plugins/jspsych-image-keyboard-response.js"></script>
+    <script type="text/javascript" src="jspsych-6.1.0/plugins/jspsych-html-button-response.js"></script>
+
 
     <script type="text/javascript" src="jspsych-6.1.0/plugins/jspsych-html-slider-response.js"></script>
     <script type="text/javascript" src="jspsych-6.1.0/plugins/jspsych-fullscreen.js"></script>
@@ -28,7 +30,7 @@
     // Creating functions. Most of these are for animations.
 
     function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+    return Math.random() * max;
     }
 
     // Functions for the practice trials without the agent
@@ -363,7 +365,7 @@
             const agent_choosing_beads = {
                 type: 'html-keyboard-response',
                 stimulus: `
-
+                
                 <img src="${hand_img_path}"
                  style="position:absolute;
                  top:${percentage}%;
@@ -407,6 +409,7 @@
                 trial_duration: trialduration1,
             }
             timeline.push(agent_choosing_beads);
+            
         }
     }
 
@@ -722,6 +725,21 @@
              height:200px;
              width:auto;"/>
 
+             
+            <img src="${agent_decision_img_path_1}"
+            style="position:absolute;
+             top:27%;
+             left:70%;
+             height:30px;
+             width:auto;"/>
+
+             <img src="${agent_decision_img_path_2}"
+            style="position:absolute;
+             top:67%;
+             left:70%;
+             height:30px;
+             width:auto;"/>
+
     
                 <p style="position:absolute;
                 top:90%;
@@ -772,7 +790,19 @@
              height:200px;
              width:auto;"/>
 
-            
+             <img src="${agent_decision_img_path_1}"
+            style="position:absolute;
+             top:27%;
+             left:70%;
+             height:30px;
+             width:auto;"/>
+
+             <img src="${agent_decision_img_path_2}"
+            style="position:absolute;
+             top:67%;
+             left:70%;
+             height:30px;
+             width:auto;"/>
                 <p style="position:absolute;
                 top:90%;
                 left:50%;
@@ -826,7 +856,19 @@
              height:200px;
              width:auto;"/>
 
-    
+             <img src="${agent_decision_img_path_1}"
+            style="position:absolute;
+             top:27%;
+             left:70%;
+             height:30px;
+             width:auto;"/>
+
+             <img src="${agent_decision_img_path_2}"
+            style="position:absolute;
+             top:67%;
+             left:70%;
+             height:30px;
+             width:auto;"/>
             </div>
 
             <div style="width:200px;
@@ -856,6 +898,22 @@
             trial_duration: 1000,
         }
         timeline.push(fixation);
+    }
+
+    function attention_check(color){
+
+        const attention_check = {
+            type : 'html-button-response',
+            stimulus : `
+
+            <img src="img/red_jar_piechart.png" alt = "6-4" style="left:46%; top:40% ;width:3%; position:absolute">
+            <img src="img/green_jar_piechart.png" alt="4-6" style="left:51%; top:40% ;width:3%; position:absolute">
+
+            `,
+            choices : ['Left', 'Right'],
+            prompt : "<p>Which piechart indicates majority " + color + " beads?</p>",
+        }
+        timeline.push(attention_check);
     }
 
 //////////////////////// Begin experiment timeline ///////////////////////////////
@@ -1048,13 +1106,24 @@
         agent_choice_path_2 = 'img/agent_choices_piechart/' + agent_choices_trials_2[trial] + '.png';
         bead_samples_path = 'img/bead_samples/' + observation[trial] + '.png';
 
+        p = getRandomInt(1)
+        if (p<= 0.5){
+            color = "red"
+        }else {
+            color = "green"
+        }
+
+        if (trial % 20 == 0){
+            attention_check(color);
+        }
         jarAgentEnteringScreen(agent_img_path, false);
         shuffleJars();
-        agentChoosingBeads(agent_img_path, false);
-        agent_viewing_beads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, false);
-        agentReplacingBeads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, false);
-        participantChoosingBeads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, bead_samples_path, false);
+        // agentChoosingBeads(agent_img_path, false);
+        // agent_viewing_beads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, false);
+        // agentReplacingBeads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, false);
+        // participantChoosingBeads(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, bead_samples_path, false);
         participantStateConfidence(agent_img_path_1,agent_img_path_2, agent_choice_path_1,agent_choice_path_2, bead_samples_path, false);
+
         // fixation();
     }
 
