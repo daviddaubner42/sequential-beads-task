@@ -69,6 +69,13 @@ jsPsych.plugins['pavlovia'] = (function() {
     return data;
 	};
 
+	const defaultCompletedCallback = function(){
+		const msg = "Thanks for your time, you can close this window now.";
+			const displayElement = jsPsych.getDisplayElement();
+			displayElement.innerHTML = '<pre id="pavlovia-completed"></pre>';
+			document.getElementById('pavlovia-completed').textContent = msg;
+	}
+
 
 	/**
 	 * Plugin information.
@@ -99,7 +106,7 @@ jsPsych.plugins['pavlovia'] = (function() {
 			completedCallback: {
 				type: jsPsych.plugins.parameterType.FUNCTION,
 				pretty_name: 'CompletedCallback',
-				default: () => { },
+				default: defaultCompletedCallback,
 				description: 'The callback function called when the experiment completed and reception of the data has been confirmed by Pavlovia'
 			},
       dataFilter: {
