@@ -99,7 +99,7 @@ jsPsych.plugins['pavlovia'] = (function() {
 			completedCallback: {
 				type: jsPsych.plugins.parameterType.FUNCTION,
 				pretty_name: 'CompletedCallback',
-				default: defaultErrorCallback,
+				default: () => { },
 				description: 'The callback function called when the experiment completed and reception of the data has been confirmed by Pavlovia'
 			},
       dataFilter: {
