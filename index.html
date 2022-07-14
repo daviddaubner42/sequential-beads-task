@@ -912,7 +912,7 @@
             `,
             choices : ['Left', 'Right'],
             prompt : "<p>Which piechart indicates majority " + color + " beads?</p>",
-            data: {Color: color},
+            data: {participant_response: true, color: color},
 
         }
         timeline.push(attention_check);
