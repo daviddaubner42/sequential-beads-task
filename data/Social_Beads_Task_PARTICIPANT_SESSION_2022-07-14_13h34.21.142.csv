@@ -1,0 +1,513 @@
+"rt","response","stimulus","participant_response","agent_decision_1","agent_decision_2","beads_shown","trial_type","trial_index","time_elapsed","internal_node_id","subject_id"
+"1367.4000000953674","50","
+
+            <div style=""z-index: -1"">
+
+            <img src=""img/bead_samples/0.7.png""
+             style=""position:absolute;
+             top:55%;
+             left:25%;
+             transform: translate(-50%, -50%);
+             height:300px;
+             width:auto;
+             ""/>
+
+            <img src='img/jar_covered_opened.png'
+            style=""position:absolute;
+            z-index: -1;
+            top:50%;
+            left:53%;
+            height: 600px;
+            margin-top:-430px;
+            margin-left:-290px""/>
+
+            <img src=""img/faces/1.png""
+            style=""position:absolute;
+             top:10%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+            <img src=""img/faces/2.png""
+            style=""position:absolute;
+             top:50%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/15.png""
+            style=""position:absolute;
+             top:27%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/20.png""
+            style=""position:absolute;
+             top:67%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+            </div>
+
+            <div style=""width:200px;
+            margin-bottom: 40px;
+            margin-top: 50px;"">
+            <p style=""top:40%;right:0%; position:relative;"">Choose your confidence for the jar which the beads are drawn from:</p>
+            <div style=""width:10px; float: left;"">
+            <p><img src=""img/red_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            <div style=""width: 25px; float: right;"">
+            <p><img src=""img/green_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            </div>
+
+            ","true","img/agent_choices_piechart/15.png","img/agent_choices_piechart/20.png","img/bead_samples/0.7.png","html-slider-response","1288","43543","0.0-1288.0",""
+"1400.1000001430511","50","
+
+            <div style=""z-index: -1"">
+
+            <img src=""img/bead_samples/0.3.png""
+             style=""position:absolute;
+             top:55%;
+             left:25%;
+             transform: translate(-50%, -50%);
+             height:300px;
+             width:auto;
+             ""/>
+
+            <img src='img/jar_covered_opened.png'
+            style=""position:absolute;
+            z-index: -1;
+            top:50%;
+            left:53%;
+            height: 600px;
+            margin-top:-430px;
+            margin-left:-290px""/>
+
+            <img src=""img/faces/2.png""
+            style=""position:absolute;
+             top:10%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+            <img src=""img/faces/3.png""
+            style=""position:absolute;
+             top:50%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/50.png""
+            style=""position:absolute;
+             top:27%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/40.png""
+            style=""position:absolute;
+             top:67%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+            </div>
+
+            <div style=""width:200px;
+            margin-bottom: 40px;
+            margin-top: 50px;"">
+            <p style=""top:40%;right:0%; position:relative;"">Choose your confidence for the jar which the beads are drawn from:</p>
+            <div style=""width:10px; float: left;"">
+            <p><img src=""img/red_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            <div style=""width: 25px; float: right;"">
+            <p><img src=""img/green_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            </div>
+
+            ","true","img/agent_choices_piechart/50.png","img/agent_choices_piechart/40.png","img/bead_samples/0.3.png","html-slider-response","1795","54043","0.0-1795.0",""
+"1939.7999999523163","50","
+
+            <div style=""z-index: -1"">
+
+            <img src=""img/bead_samples/0.4.png""
+             style=""position:absolute;
+             top:55%;
+             left:25%;
+             transform: translate(-50%, -50%);
+             height:300px;
+             width:auto;
+             ""/>
+
+            <img src='img/jar_covered_opened.png'
+            style=""position:absolute;
+            z-index: -1;
+            top:50%;
+            left:53%;
+            height: 600px;
+            margin-top:-430px;
+            margin-left:-290px""/>
+
+            <img src=""img/faces/3.png""
+            style=""position:absolute;
+             top:10%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+            <img src=""img/faces/4.png""
+            style=""position:absolute;
+             top:50%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/30.png""
+            style=""position:absolute;
+             top:27%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/50.png""
+            style=""position:absolute;
+             top:67%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+            </div>
+
+            <div style=""width:200px;
+            margin-bottom: 40px;
+            margin-top: 50px;"">
+            <p style=""top:40%;right:0%; position:relative;"">Choose your confidence for the jar which the beads are drawn from:</p>
+            <div style=""width:10px; float: left;"">
+            <p><img src=""img/red_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            <div style=""width: 25px; float: right;"">
+            <p><img src=""img/green_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            </div>
+
+            ","true","img/agent_choices_piechart/30.png","img/agent_choices_piechart/50.png","img/bead_samples/0.4.png","html-slider-response","2302","65214","0.0-2302.0",""
+"2287","50","
+
+            <div style=""z-index: -1"">
+
+            <img src=""img/bead_samples/0.1.png""
+             style=""position:absolute;
+             top:55%;
+             left:25%;
+             transform: translate(-50%, -50%);
+             height:300px;
+             width:auto;
+             ""/>
+
+            <img src='img/jar_covered_opened.png'
+            style=""position:absolute;
+            z-index: -1;
+            top:50%;
+            left:53%;
+            height: 600px;
+            margin-top:-430px;
+            margin-left:-290px""/>
+
+            <img src=""img/faces/1.png""
+            style=""position:absolute;
+             top:10%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+            <img src=""img/faces/2.png""
+            style=""position:absolute;
+             top:50%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/55.png""
+            style=""position:absolute;
+             top:27%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/45.png""
+            style=""position:absolute;
+             top:67%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+            </div>
+
+            <div style=""width:200px;
+            margin-bottom: 40px;
+            margin-top: 50px;"">
+            <p style=""top:40%;right:0%; position:relative;"">Choose your confidence for the jar which the beads are drawn from:</p>
+            <div style=""width:10px; float: left;"">
+            <p><img src=""img/red_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            <div style=""width: 25px; float: right;"">
+            <p><img src=""img/green_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            </div>
+
+            ","true","img/agent_choices_piechart/55.png","img/agent_choices_piechart/45.png","img/bead_samples/0.1.png","html-slider-response","2366","76404","0.0-2366.0",""
+"2719.2000000476837","50","
+
+            <div style=""z-index: -1"">
+
+            <img src=""img/bead_samples/0.6.png""
+             style=""position:absolute;
+             top:55%;
+             left:25%;
+             transform: translate(-50%, -50%);
+             height:300px;
+             width:auto;
+             ""/>
+
+            <img src='img/jar_covered_opened.png'
+            style=""position:absolute;
+            z-index: -1;
+            top:50%;
+            left:53%;
+            height: 600px;
+            margin-top:-430px;
+            margin-left:-290px""/>
+
+            <img src=""img/faces/2.png""
+            style=""position:absolute;
+             top:10%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+            <img src=""img/faces/3.png""
+            style=""position:absolute;
+             top:50%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/95.png""
+            style=""position:absolute;
+             top:27%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/40.png""
+            style=""position:absolute;
+             top:67%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+            </div>
+
+            <div style=""width:200px;
+            margin-bottom: 40px;
+            margin-top: 50px;"">
+            <p style=""top:40%;right:0%; position:relative;"">Choose your confidence for the jar which the beads are drawn from:</p>
+            <div style=""width:10px; float: left;"">
+            <p><img src=""img/red_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            <div style=""width: 25px; float: right;"">
+            <p><img src=""img/green_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            </div>
+
+            ","true","img/agent_choices_piechart/95.png","img/agent_choices_piechart/40.png","img/bead_samples/0.6.png","html-slider-response","2428","79903","0.0-2428.0",""
+"11499.599999904633","50","
+
+            <div style=""z-index: -1"">
+
+            <img src=""img/bead_samples/0.7.png""
+             style=""position:absolute;
+             top:55%;
+             left:25%;
+             transform: translate(-50%, -50%);
+             height:300px;
+             width:auto;
+             ""/>
+
+            <img src='img/jar_covered_opened.png'
+            style=""position:absolute;
+            z-index: -1;
+            top:50%;
+            left:53%;
+            height: 600px;
+            margin-top:-430px;
+            margin-left:-290px""/>
+
+            <img src=""img/faces/3.png""
+            style=""position:absolute;
+             top:10%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+            <img src=""img/faces/4.png""
+            style=""position:absolute;
+             top:50%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/85.png""
+            style=""position:absolute;
+             top:27%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/40.png""
+            style=""position:absolute;
+             top:67%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+            </div>
+
+            <div style=""width:200px;
+            margin-bottom: 40px;
+            margin-top: 50px;"">
+            <p style=""top:40%;right:0%; position:relative;"">Choose your confidence for the jar which the beads are drawn from:</p>
+            <div style=""width:10px; float: left;"">
+            <p><img src=""img/red_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            <div style=""width: 25px; float: right;"">
+            <p><img src=""img/green_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            </div>
+
+            ","true","img/agent_choices_piechart/85.png","img/agent_choices_piechart/40.png","img/bead_samples/0.7.png","html-slider-response","2490","92162","0.0-2490.0",""
+"720.0999999046326","50","
+
+            <div style=""z-index: -1"">
+
+            <img src=""img/bead_samples/0.6.png""
+             style=""position:absolute;
+             top:55%;
+             left:25%;
+             transform: translate(-50%, -50%);
+             height:300px;
+             width:auto;
+             ""/>
+
+            <img src='img/jar_covered_opened.png'
+            style=""position:absolute;
+            z-index: -1;
+            top:50%;
+            left:53%;
+            height: 600px;
+            margin-top:-430px;
+            margin-left:-290px""/>
+
+            <img src=""img/faces/4.png""
+            style=""position:absolute;
+             top:10%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+            <img src=""img/faces/5.png""
+            style=""position:absolute;
+             top:50%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/85.png""
+            style=""position:absolute;
+             top:27%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/65.png""
+            style=""position:absolute;
+             top:67%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+            </div>
+
+            <div style=""width:200px;
+            margin-bottom: 40px;
+            margin-top: 50px;"">
+            <p style=""top:40%;right:0%; position:relative;"">Choose your confidence for the jar which the beads are drawn from:</p>
+            <div style=""width:10px; float: left;"">
+            <p><img src=""img/red_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            <div style=""width: 25px; float: right;"">
+            <p><img src=""img/green_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            </div>
+
+            ","true","img/agent_choices_piechart/85.png","img/agent_choices_piechart/65.png","img/bead_samples/0.6.png","html-slider-response","2552","93639","0.0-2552.0",""
+"733.4000000953674","50","
+
+            <div style=""z-index: -1"">
+
+            <img src=""img/bead_samples/0.3.png""
+             style=""position:absolute;
+             top:55%;
+             left:25%;
+             transform: translate(-50%, -50%);
+             height:300px;
+             width:auto;
+             ""/>
+
+            <img src='img/jar_covered_opened.png'
+            style=""position:absolute;
+            z-index: -1;
+            top:50%;
+            left:53%;
+            height: 600px;
+            margin-top:-430px;
+            margin-left:-290px""/>
+
+            <img src=""img/faces/5.png""
+            style=""position:absolute;
+             top:10%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+            <img src=""img/faces/6.png""
+            style=""position:absolute;
+             top:50%;
+             left:85%;
+             height:200px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/45.png""
+            style=""position:absolute;
+             top:27%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+
+             <img src=""img/agent_choices_piechart/75.png""
+            style=""position:absolute;
+             top:67%;
+             left:70%;
+             height:30px;
+             width:auto;""/>
+            </div>
+
+            <div style=""width:200px;
+            margin-bottom: 40px;
+            margin-top: 50px;"">
+            <p style=""top:40%;right:0%; position:relative;"">Choose your confidence for the jar which the beads are drawn from:</p>
+            <div style=""width:10px; float: left;"">
+            <p><img src=""img/red_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            <div style=""width: 25px; float: right;"">
+            <p><img src=""img/green_jar_piechart.png"" style=""width:30px; top:43px""/></p>
+            </div>
+            </div>
+
+            ","true","img/agent_choices_piechart/45.png","img/agent_choices_piechart/75.png","img/bead_samples/0.3.png","html-slider-response","2614","95152","0.0-2614.0",""
