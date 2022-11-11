@@ -1,3 +1,3 @@
-# New beads experiment with social priors
+# Sequential belief updating beads experiment
 
-A new beads experiment to test circular inference with more social priors. Experiment is built using JSPsych.
+A modification of the beads experiment to measure individual differences in confirmation bias in the context of sequential belief updating. Experiment is built using JSPsych.

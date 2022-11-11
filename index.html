@@ -17,8 +17,8 @@
     <script type="text/javascript" src="jspsych-6.1.0/plugins/jspsych-fullscreen.js"></script>
     <!-- <script type="text/javascript" src="jspsych-6.1.0/plugins/jspsych-preload.js"></script> -->
 
-    <script type="text/javascript" src="lib/vendors/jquery-2.2.0.min.js"></script>
-    <script type="text/javascript" src="jspsych-pavlovia-2020.4_edited.js"></script>
+    <!-- <script type="text/javascript" src="lib/vendors/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="jspsych-pavlovia-2020.4_edited.js"></script> -->
 
     <style>
         body {overflow: hidden;}
@@ -927,11 +927,11 @@
     // jsPsych.data.ignore(['trial_type', 'trial_index', 'time_elapsed', 'internal_node_id', 'stimulus', 'key_press', 'success']);
 
     /* init connection with pavlovia.org */
-    const pavlovia_init = {
-        type: "pavlovia",
-        command: "init"
-    };
-    timeline.push(pavlovia_init);
+    // const pavlovia_init = {
+    //     type: "pavlovia",
+    //     command: "init"
+    // };
+    // timeline.push(pavlovia_init);
 
     // const preload = {
     //     type: 'preload',
@@ -1145,11 +1145,11 @@
     timeline.push(finished);
 
     /* finish connection with pavlovia.org */
-    const pavlovia_finish = {
-        type: "pavlovia",
-        command: "finish"
-        };
-    timeline.push(pavlovia_finish);
+    // const pavlovia_finish = {
+    //     type: "pavlovia",
+    //     command: "finish"
+    //     };
+    // timeline.push(pavlovia_finish);
 
     // Getting participant info
     const subject_id = jsPsych.data.getURLVariable('participant');
