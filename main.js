@@ -42,19 +42,23 @@ const instructions = {
     <img src="img/jar_40_60.png" alt = "6-4" style="width:10%" float:"left">
     <img src="img/jar_60_40.png" alt="4-6" style="width:10%" float:"right">
     
-    <p> The ratio of red:green in the left jar is 60 to 40 and this ratio for the right jar is 40 to 60. </p>
+    <p>The ratio of red:green in the left jar is 60 to 40 and this ratio for the right jar is 40 to 60. </p>
 
-    <p>You will be given one of these jars at random. But, you won't know which jar it is you have been given, as it will be
-    presented to you covered, so you can't see the contents of the jar. This would look something like this:</p>
+    <p>In each trial, you will be given one of these jars. However, the contents of the jar will be concealed, so that you don't 
+    know which one it is. This would look something like this:</p>
 
     <p><img src="img/jar_covered.png" style="width:20%"</p>
 
-    <p>You will then draw random beads from the jar. You might draw something that looks like this:</p>
+    <p>You will then repeatedly draw a single random bead from the jar. The result of such a draw can be either 
+    a single red bead, or a single green bead:</p>
 
-    <p><img src ="img/bead_samples/0.3.png"</p>
+    <img src ="img/single_red_bead_sample.png" style="width:10%" float:"left">
+    <img src ="img/single_green_bead_sample.png" style="width:10%" float:"right">
 
-    <p>Based on these beads, your task is to guess, which jar these beads are drawn from. But you only need to state a confidence, using a confidence bar. The left circle indicates the jar with majority of red beads and the right circle is indication of the jar with majority of green beads. For instance, if you were strongly
-    confident that the samples are drawn from the jar with majority of red beads, you might choose to place your guess on the confidence scale like
+    <p>Based on the colour of the drawn bead, your task is to guess, which of the 2 jars you were given in this trial. But you only need to state a confidence, 
+    using a confidence bar. The left circle indicates the jar with majority of red beads and the right circle is indication of 
+    the jar with majority of green beads. For instance, if you were strongly confident that the samples are drawn 
+    from the jar with majority of red beads, you might choose to place your guess on the confidence scale like
     so (note that the style of the slider you will see in the experiment might look different to that shown here,
     but that should not make a difference):</p>
 
@@ -88,11 +92,12 @@ timeline.push(enter_fullscreen);
 // Practice trials, 3 in total, done without an agent
 
 let bead_samples_path;
-const bead_samples_practice1 = [0.1, 0.3, 0.5, 0.2, 0.7];
+// const bead_samples_practice1 = [0.1, 0.3, 0.5, 0.2, 0.7];
+const bead_sequence = ["red", "red", "green", "red", "green"];
+animations.jarEnteringScreen(timeline);
+animations.shuffleJars(timeline);
 for (let trial = 0; trial < 3; trial++) {
-    bead_samples_path = 'img/bead_samples/' + bead_samples_practice1[trial] + '.png';
-    animations.jarEnteringScreen(timeline);
-    animations.shuffleJars(timeline);
+    bead_samples_path = 'img/bead_samples_new/single_' + bead_sequence[trial] + '_bead_sample.png';
     animations.participantChoosingBeadsWithoutAgent(bead_samples_path, timeline);
     animations.participantStateConfidenceWithoutAgent(bead_samples_path, timeline);
     // fixation();

@@ -117,7 +117,7 @@ export function participantChoosingBeadsWithoutAgent (participant_beads_img_path
 
             `,
             choices: "NO_KEYS",
-            trial_duration: 0.01,
+            trial_duration: 0.5,
         }
         timeline.push(participant_choosing_beads);
     }
@@ -189,7 +189,7 @@ export function participantStateConfidenceWithoutAgent (participant_beads_img_pa
         <div style="width:200px;
         margin-bottom: 40px;
         margin-top: 50px;">
-        <p>Choose your confidence for the colour of the next bead:</p>
+        <p>Choose your confidence for the jar which the beads are being drawn from:</p>
         <div style="width:10px; float: left;">
         <p><img src="img/red_jar_piechart.png" style="width:30px; top:43px"/></p>
         </div>
@@ -410,7 +410,7 @@ export function shuffleJars(timeline){
             "/>
             `,
             choices: "NO_KEYS",
-            trial_duration: 1,
+            trial_duration: 10,
             }
     timeline.push(shuffle_jars);
         }
