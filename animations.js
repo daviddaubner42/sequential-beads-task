@@ -1,5 +1,393 @@
 // Creating functions. Most of these are for animations.
 
+
+// Show the 10 jars and pick one at random
+export function jarChoice(n_red_jars, timeline, speed=1) {
+
+    // show the 10 jars specific to this trial
+    const ten_jars = {
+        type: 'html-keyboard-response',
+        stimulus: `
+            <img src="img/ten_jars_${n_red_jars}0_${(10 - n_red_jars)}0.png" style="
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height:50%;"/>
+
+            <p style="position:absolute;
+                top:90%;
+                left:50%;
+                transform: translate(-50%, -50%);">
+                    There are ${n_red_jars} majority red jars and ${10 - n_red_jars} majority green jars.\n
+                    Press any key to proceed to the random jar choice.
+            </p>
+        `,
+        choices: [' '], 
+    }
+    timeline.push(ten_jars);
+
+    let percentage;
+    let hand_img_path;
+
+    // cover the jars
+    for (let step = 0; step < 130; step = step + 2) {
+        percentage = step / 2 - 10;
+        const cover = {
+            type: 'html-keyboard-response',
+            stimulus: `
+                <img src="img/ten_jars_${n_red_jars}0_${(10 - n_red_jars)}0.png" style="
+                    position: absolute;
+                    top: 60%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    height:50%;"/>
+
+                <img src="img/ten_jars_covered.png" style="
+                    position:absolute;
+                    top: ${percentage}%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 50%"/>
+            `,
+            choices: "NO_KEYS",
+            trial_duration: 10/speed
+        }
+        timeline.push(cover);
+    }
+
+    // lower the hand behind the cover
+    for (let step = 0; step < 100; step = step + 2) {
+        percentage = step / 2 - 10;
+        hand_img_path = 'img/hand_back.png';
+
+        const hand = {
+            type: 'html-keyboard-response',
+            stimulus: `
+
+            <img src="${hand_img_path}" style="
+                position:absolute;
+                top:${percentage}%;
+                left:50%;
+                transform: translate(-50%, -50%) rotate(180deg);
+                height:300px;
+                width:15%;
+                height: auto;"/>
+
+            <img src="img/ten_jars_covered.png" style="
+                position:absolute;
+                top: 60%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 50%"/>
+            
+            <p style="
+                position:absolute;
+                top:90%;
+                left:50%;
+                transform: translate(-50%, -50%);">
+                    Picking one of the jars at random.
+            </p>
+            `,
+            choices: "NO_KEYS",
+            trial_duration: 10/speed,
+        }
+        timeline.push(hand);
+    }
+
+    // pull out a jar
+    for (let step = 100; step < 261; step = step + 2) {
+        percentage = 100 - step / 2;
+        hand_img_path = 'img/jar_covered.png';
+
+        const jar = {
+            type: 'html-keyboard-response',
+            stimulus: `
+
+            <img src="${hand_img_path}"
+                style="position:absolute;
+                top:${percentage}%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                height:300px;
+                width:15%;
+                height: auto;
+            "/>
+
+            <img src="img/ten_jars_covered.png" style="
+                position:absolute;
+                top: 60%;
+                left: 50%;
+                transform: translate(-50%, -50%);"/>
+            
+            <p style="
+                position:absolute;
+                top:90%;
+                left:50%;
+                transform: translate(-50%, -50%);">
+                    Picking one of the jars at random.
+            </p>
+            `,
+            choices: "NO_KEYS",
+            trial_duration: 10/speed,
+        }
+        timeline.push(jar);
+    }
+
+    // lower the picked jar into position
+    for (let step = 0; step < 131; step++) {
+        percentage = step / 2 - 10;
+        const jar = {
+            type: 'html-keyboard-response',
+            stimulus: `
+            <img src='img/jar_covered.png'
+                style="position:absolute;
+                top:${percentage}%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                height:300px;
+                width:15%;
+                height: auto;"/>
+
+            <p style="position:absolute; top:90%; left:50%; transform: translate(-50%, -50%);">Randomly picked jar</p>
+            `,
+            choices: "NO_KEYS",
+            trial_duration: 5/speed,
+        }
+        timeline.push(jar);
+    }
+}
+
+// Sample a bead from the covered jar
+export function beadChoice(single_bead_sample_path, timeline, speed=1) {
+
+    let percentage;
+    let hand_img_path;
+
+    // lower the hand into the covered jar and pull out a sample
+    for (let step = 0; step < 261; step = step + 2) {
+        if (step < 100) { // lowering the hand
+            percentage = step / 2 - 10;
+            hand_img_path = 'img/hand_back.png'
+        } else { // pulling out the hand
+            percentage = 100 - step / 2;
+            hand_img_path = 'img/hand_fist_edited.png'
+        }
+
+        const participant_choosing_beads = {
+            type: 'html-keyboard-response',
+            stimulus: `
+
+            <img src="${hand_img_path}"
+            style="position:absolute;
+            top:${percentage}%;
+            left:50%;
+            transform: translate(-50%, -50%) rotate(180deg);
+            height:300px;
+            width:auto;
+            "/>
+
+            <img src='img/jar_covered_opened.png'
+            style="position:absolute;
+            top:50%;
+            left:53%;
+            height: 600px;
+            margin-top:-430px;
+            margin-left:-290px"/>
+
+            <p style="position:absolute;
+            top:90%;
+            left:50%;
+            transform: translate(-50%, -50%);">You are picking beads</p>
+
+            `,
+            choices: "NO_KEYS",
+            trial_duration: 10/speed
+        }
+        timeline.push(participant_choosing_beads);
+    }
+
+    // show the drawn bead
+    for (let step = 0; step < 131; step = step + 2) {
+        percentage = 120 - step/2;
+        const participant_viewing_beads = {
+            type: 'html-keyboard-response',
+            stimulus: `
+
+            <img src="${single_bead_sample_path}"
+            style="position:absolute;
+            top:${percentage}%;
+            left:25%;
+            transform: translate(-50%, -50%);
+            height:400px;
+            width:auto;
+            "/>
+
+            <img src='img/jar_covered_opened.png'
+            style="position:absolute;
+            top:50%;
+            left:53%;
+            height: 600px;
+            margin-top:-430px;
+            margin-left:-290px;"/>
+
+            <p style="position:absolute;
+            top:90%;
+            left:50%;
+            transform: translate(-50%, -50%);">You are picking beads</p>
+
+            `,
+            choices: "NO_KEYS",
+            trial_duration: 10/speed
+        }
+        timeline.push(participant_viewing_beads);
+    }
+}
+
+// lets participant state their confidence about which jar is being used at the beginning of a trial, before sampling
+export function stateConfidenceWithoutEvidence (n_red_jars, timeline) {
+
+    const ten_jars_path = "img/ten_jars_" + n_red_jars + "0_" + (10 - n_red_jars) + "0.png";
+
+    const participant_stating_confidence = {
+        type: 'html-slider-response',
+        stimulus: `
+
+        <div style="z-index: -1">
+            <img src="${ten_jars_path}" style="
+                position:absolute;
+                top:55%;
+                left:25%;
+                transform: translate(-50%, -50%);
+                height:350px;
+                width:auto;"/>
+
+            <img src='img/jar_covered_opened.png' style="
+                position:absolute;
+                z-index: -1;
+                top:50%;
+                left:53%;
+                height:600px;
+                margin-top:-430px;
+                margin-left:-290px;"/>
+        </div>
+
+        <div style="width:200px; margin-bottom: 40px; margin-top: 50px;">
+            <p>Choose your confidence that the jar is majority red:</p>
+            <div style="width:10px; float: left;">
+                <p><img src="img/red_jar_piechart.png" style="width:30px; top:43px"/></p>
+            </div>
+            <div style="width:25px; float: right;">
+                <p><img src="img/green_jar_piechart.png" style = "width:30px; top:43px"/></p>
+            </div>
+        </div>
+        `,
+        slider_width: 150,
+        data: {
+            task: 'confidence'
+        }
+    }
+    timeline.push(participant_stating_confidence);
+}
+
+// lets participant state their confidence about which jar is being used after drawing a bead
+export function stateConfidenceWithEvidence (participant_beads_img_path, timeline) {
+
+    const participant_stating_confidence = {
+        type: 'html-slider-response',
+        stimulus: `
+
+        <div style="z-index: -1">
+            <img src="${participant_beads_img_path}" style="
+                position:absolute;
+                top:55%;
+                left:25%;
+                transform: translate(-50%, -50%);
+                height:400px;
+                width:auto;"/>
+
+            <img src='img/jar_covered_opened.png' style="
+                position:absolute;
+                z-index: -1;
+                top:50%;
+                left:53%;
+                height:600px;
+                margin-top:-430px;
+                margin-left:-290px;"/>
+        </div>
+
+        <div style="width:200px; margin-bottom: 40px; margin-top: 50px;">
+            <p>Choose your confidence that the jar is majority red:</p>
+            <div style="width:10px; float: left;">
+                <p><img src="img/red_jar_piechart.png" style="width:30px; top:43px"/></p>
+            </div>
+            <div style="width:25px; float: right;">
+                <p><img src="img/green_jar_piechart.png" style = "width:30px; top:43px"/></p>
+            </div>
+        </div>
+        `,
+        slider_width: 150,
+        start: function() { 
+            // dynamic parameter = function gets executed just before the trial 
+            // and obtains last confidence statement
+            let confidences = jsPsych.data.get()
+                .filter({task: 'confidence'})
+                .select('response').values;
+            
+
+            if (confidences.length > 0) {
+                return confidences.slice(-1)[0];
+            } else {
+                return 50;
+            }
+        },
+        data: {
+            task: 'confidence'
+        }
+    }
+    timeline.push(participant_stating_confidence);
+}
+
+export function fixation(timeline) {
+    const fixation = {
+        type: 'html-keyboard-response',
+        stimulus: `<div style="font-size:60px;">+</div>`,
+        choices: "NO_KEYS",
+        trial_duration: 1000,
+    }
+    timeline.push(fixation);
+}
+
+export function attention_check(color, timeline){
+
+    const attention_check = {
+        type : 'html-button-response',
+        stimulus : `
+
+        <img src="img/red_jar_piechart.png" alt = "6-4" style="left:46%; top:40% ;width:3%; position:absolute">
+        <img src="img/green_jar_piechart.png" alt="4-6" style="left:51%; top:40% ;width:3%; position:absolute">
+
+        `,
+        choices : ['Left', 'Right'],
+        prompt : "<p>Which piechart indicates majority " + color + " beads?</p>",
+        data: {participant_response: true, color: color},
+
+    }
+    timeline.push(attention_check);
+}
+
+
+
+
+
+// ---------------------------------------------------------------------
+// ---------------------- UNUSED ANIMATIONS ----------------------------
+// ---------------------------------------------------------------------
+
+
+
+
+
 // Functions for the practice trials without the agent
 // Only jar coming onto the screen
 export function jarEnteringScreen (timeline) {
@@ -165,39 +553,33 @@ export function participantStateConfidenceWithoutAgent (participant_beads_img_pa
         stimulus: `
 
         <div style="z-index: -1">
+            <img src="${participant_beads_img_path}" style="
+                position:absolute;
+                top:55%;
+                left:25%;
+                transform: translate(-50%, -50%);
+                height:400px;
+                width:auto;"/>
 
-        <img src="${participant_beads_img_path}"
-        style="position:absolute;
-        top:55%;
-        left:25%;
-        transform: translate(-50%, -50%);
-        height:400px;
-        width:auto;
-        "/>
-
-        <img src='img/jar_covered_opened.png'
-        style="position:absolute;
-        z-index: -1;
-        top:50%;
-        left:53%;
-        height:600px;
-        margin-top:-430px;
-        margin-left:-290px;"/>
-
+            <img src='img/jar_covered_opened.png' style="
+                position:absolute;
+                z-index: -1;
+                top:50%;
+                left:53%;
+                height:600px;
+                margin-top:-430px;
+                margin-left:-290px;"/>
         </div>
 
-        <div style="width:200px;
-        margin-bottom: 40px;
-        margin-top: 50px;">
-        <p>Choose your confidence for the colour of the next bead:</p>
-        <div style="width:10px; float: left;">
-        <p><img src="img/red_jar_piechart.png" style="width:30px; top:43px"/></p>
+        <div style="width:200px; margin-bottom: 40px; margin-top: 50px;">
+            <p>Choose your confidence that the jar is majority red:</p>
+            <div style="width:10px; float: left;">
+                <p><img src="img/red_jar_piechart.png" style="width:30px; top:43px"/></p>
+            </div>
+            <div style="width:25px; float: right;">
+                <p><img src="img/green_jar_piechart.png" style = "width:30px; top:43px"/></p>
+            </div>
         </div>
-        <div style="width:25px; float: right;">
-        <p><img src="img/green_jar_piechart.png" style = "width:30px; top:43px"/></p>
-        </div>
-        </div>
-
         `,
         slider_width: 150,
     }
@@ -858,32 +1240,4 @@ export function participantStateConfidence (agent_img_path_1,agent_img_path_2, a
         data: {participant_response: true, agent_decision_1: agent_decision_img_path_1, agent_decision_2: agent_decision_img_path_2, beads_shown: participant_beads_img_path},
     }
     timeline.push(participant_stating_confidence);
-}
-
-export function fixation(timeline) {
-    const fixation = {
-        type: 'html-keyboard-response',
-        stimulus: `<div style="font-size:60px;">+</div>`,
-        choices: "NO_KEYS",
-        trial_duration: 1000,
-    }
-    timeline.push(fixation);
-}
-
-export function attention_check(color, timeline){
-
-    const attention_check = {
-        type : 'html-button-response',
-        stimulus : `
-
-        <img src="img/red_jar_piechart.png" alt = "6-4" style="left:46%; top:40% ;width:3%; position:absolute">
-        <img src="img/green_jar_piechart.png" alt="4-6" style="left:51%; top:40% ;width:3%; position:absolute">
-
-        `,
-        choices : ['Left', 'Right'],
-        prompt : "<p>Which piechart indicates majority " + color + " beads?</p>",
-        data: {participant_response: true, color: color},
-
-    }
-    timeline.push(attention_check);
 }
